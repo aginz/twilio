@@ -17,8 +17,8 @@ class Text
     twilio_number = "+15005550006"
 
     begin
-      @client.account.messages.create(body: @body.to_s,
-                                      to: somebody.to_s,
+      @client.account.messages.create(body: @body,
+                                      to: somebody,
                                       from: twilio_number)
     rescue Twilio::REST::RequestError => e
       puts e.message
